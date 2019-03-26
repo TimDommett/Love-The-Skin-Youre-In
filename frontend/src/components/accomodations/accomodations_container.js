@@ -2,7 +2,6 @@
 import { connect } from 'react-redux';
 import { fetchAccomodations } from '../../actions/accomodation_actions';
 import Accomodations from "./accomodations";
-import AccomodationsReducer from '../../reducers/accomodations_reducer';
 
 const mapStateToProps = (state) => {
     return {
