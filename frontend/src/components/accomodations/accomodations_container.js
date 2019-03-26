@@ -4,9 +4,12 @@ import { fetchAccomodations } from '../../actions/accomodation_actions';
 import Accomodations from "./accomodations";
 
 const mapStateToProps = (state) => {
+    debugger;
     return {
+        
         accomodations: Object.values(state.accomodations.all)
     };
+
 };
 
 const mapDispatchToProps = dispatch => {

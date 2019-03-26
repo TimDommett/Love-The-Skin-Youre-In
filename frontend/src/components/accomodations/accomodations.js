@@ -17,6 +17,7 @@ class Accomodation extends React.Component {
   }
 
   componentWillReceiveProps(newState) {
+    debugger;
       this.setState({ accomodations: newState.accomodations });
   }
 
