@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 class SignupForm extends React.Component {
@@ -71,7 +71,7 @@ class SignupForm extends React.Component {
                   type="text"
                   value={this.state.username}
                   onChange={this.update("username")}
-                  placeholder="username"
+                  placeholder="Username"
                 />
                 <br />
                 <input
