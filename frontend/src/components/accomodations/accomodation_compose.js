@@ -47,36 +47,42 @@ class AccomodationCompose extends React.Component {
 
     return (
       <div>
-        
         <form onSubmit={this.handleSubmit}>
           <div>
             <input
               type="text"
               value={title}
-              onChange={this.update('title')}
+              onChange={this.update("title")}
               placeholder="Write your title here..."
             />
 
             <input
               type="textarea"
               value={text}
-              onChange={this.update('text')}
+              onChange={this.update("text")}
               placeholder="Write your accomodation details here..."
             />
 
             <input
               type="textarea"
               value={link}
-              onChange={this.update('link')}
+              onChange={this.update("link")}
               placeholder="Give a link to your website..."
             />
 
-            <input
+            {/* <input
               type="textarea"
               value={price}
-              onChange={this.update('price')}
+              onChange={this.update("price")}
               placeholder="Write your accomodation..."
-            />
+            /> */}
+            <select value={price} onChange={this.update("price")}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
             <input type="submit" value="Submit" />
           </div>
         </form>
