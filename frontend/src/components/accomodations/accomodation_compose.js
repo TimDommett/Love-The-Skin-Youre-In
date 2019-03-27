@@ -2,6 +2,8 @@
 import React from 'react';
 import AccomodationBox from "./accomodation_box";
 import S3FileUpload from "react-s3";
+import S3 from "aws-s3";
+
 
 const keys = require("../../keys");
 
@@ -12,6 +14,12 @@ const config = {
   accessKeyId: keys.awsAccessKeyID,
   secretAccessKey: keys.awsSecretAccessKey
 };
+
+const S3Client = new S3(config);
+
+const newFileName = 'my-awesome-file';
+
+
 
 class AccomodationCompose extends React.Component {
   constructor(props) {
@@ -33,10 +41,15 @@ class AccomodationCompose extends React.Component {
   }
 
   upload(e) {
-    S3FileUpload.uploadFile(e.target.files[0], config)
-      .then(data => console.log(data.location))
+    console.log(e.target.files[0]);
+    S3Client
+      .uploadFile(e.target.files[0], newFileName)
+      .then(data => console.log(data))
       .catch(err => console.error(err))
   };
+    // S3FileUpload.uploadFile(e.target.files[0], config)
+    //   .then(data => console.log(data.location))
+    //   .catch(err => alert(err))
 
   handleSubmit(e) {
     e.preventDefault();
