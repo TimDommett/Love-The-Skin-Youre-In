@@ -17,7 +17,7 @@ const config = {
 
 const S3Client = new S3(config);
 
-const newFileName = 'my-awesome-file';
+// const newFileName = 'my-awesome-file';
 
 
 
@@ -43,7 +43,7 @@ class AccomodationCompose extends React.Component {
   upload(e) {
     console.log(e.target.files[0]);
     S3Client
-      .uploadFile(e.target.files[0], newFileName)
+      .uploadFile(e.target.files[0])
       .then(data => console.log(data))
       .catch(err => console.error(err))
   };
