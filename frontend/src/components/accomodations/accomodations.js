@@ -22,10 +22,10 @@ class Accomodation extends React.Component {
 
   render() {
       if (this.state.accomodations.length === 0) {
-        return <div>There are no Accomodations</div>;
+        return <div></div>;
     } else {
       return (
-        <div>
+        <div className="accomodations_container">
           <h2>All Accomodations</h2>
           {this.state.accomodations.map(accomodation => (
             <AccomodationBox

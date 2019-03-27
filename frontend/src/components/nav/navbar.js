@@ -19,7 +19,7 @@ class NavBar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
-                <div>
+                <div className="nav">
                     <Link to={'/accomodations'}>All accomodations</Link>
                     <Link to={'/profile'}>Profile</Link>
                     <Link to={'/new_accomodation'}>Post an Accomodation</Link>
@@ -28,18 +28,18 @@ class NavBar extends React.Component {
             );
         } else {
             return (
-                <div>
-                    <Link to={'/signup'}>Signup</Link>
-                    <Link to={'/login'}>Login</Link>
-                </div>
+              <div className="nav">
+                <Link to={"/signup"}>Signup</Link>
+                <Link to={"/login"}>Login</Link>
+              </div>
             );
         }
     }
 
     render() {
         return (
-          <div>
-            <h1>
+          <div className="navbar">
+            <h1 className="HAFH_logo">
               <Link to={"/"}>A Home Away From Home</Link>
             </h1>
             {this.getLinks()}
