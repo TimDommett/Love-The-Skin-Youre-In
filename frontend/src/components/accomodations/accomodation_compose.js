@@ -1,6 +1,17 @@
 
 import React from 'react';
 import AccomodationBox from "./accomodation_box";
+import S3FileUpload from "react-s3";
+
+const keys = require("../../keys");
+
+const config = {
+  bucketName: "ahomeawayfromhome",
+  dirName: "photos",
+  region: "eu-west-2",
+  accessKeyId: keys.awsAccessKeyID,
+  secretAccessKey: keys.awsSecretAccessKey
+};
 
 class AccomodationCompose extends React.Component {
   constructor(props) {
@@ -20,6 +31,12 @@ class AccomodationCompose extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.setState({ newAccomodation: nextProps.newAccomodation.text });
   }
+
+  upload(e) {
+    S3FileUpload.uploadFile(e.target.files[0], config)
+      .then(data => console.log(data.location))
+      .catch(err => console.error(err))
+  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -70,12 +87,12 @@ class AccomodationCompose extends React.Component {
               placeholder="Give a link to your website..."
             />
 
-            {/* <input
-              type="textarea"
-              value={price}
-              onChange={this.update("price")}
-              placeholder="Write your accomodation..."
-            /> */}
+            <input
+              type="file"
+              // value={price}
+              onChange={this.upload}
+              // placeholder="Write your accomodation..."
+            />
             <select value={price} onChange={this.update("price")}>
               <option value="1">1</option>
               <option value="2">2</option>
