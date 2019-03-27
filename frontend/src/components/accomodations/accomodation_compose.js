@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AccomodationBox from "./accomodation_box";
-import S3FileUpload from "react-s3";
+// import S3FileUpload from "react-s3";
 import S3 from "aws-s3";
 
 
@@ -30,6 +30,8 @@ class AccomodationCompose extends React.Component {
       text: "",
       link: "",
       price: 1,
+      photoURL: "", 
+      // set the default here in photoURL
       newAccomodation: ""
     };
 
@@ -44,7 +46,7 @@ class AccomodationCompose extends React.Component {
     console.log(e.target.files[0]);
     S3Client
       .uploadFile(e.target.files[0])
-      .then(data => console.log(data))
+      .then(data => console.log(data.location))
       .catch(err => console.error(err))
   };
     // S3FileUpload.uploadFile(e.target.files[0], config)
