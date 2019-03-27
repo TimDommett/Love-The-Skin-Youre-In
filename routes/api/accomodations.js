@@ -47,7 +47,10 @@ router.post('/',
         }
 
         const newAccomodation = new Accomodation({
+          title: req.body.title,
           text: req.body.text,
+          link: req.body.link,
+          price: req.body.price,
           user: req.user.id
         });
 
