@@ -1,5 +1,6 @@
 
 import React from 'react';
+import "./home.css";
 
 class MainPage extends React.Component {
 
@@ -7,10 +8,11 @@ class MainPage extends React.Component {
         return (
           <div>
             {/* <h1>A Home Away From Home</h1> */}
-            <div className="hero-img-frame">
+            <div className="hero-image-frame">
+            {/* <div className="bg"></div> */}
               <img
-                className="hero-img"
-                src="https://gdurl.com/C025"
+                className="hero-image"
+                src="https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                 alt="Home Away From Home"
               />
             </div>

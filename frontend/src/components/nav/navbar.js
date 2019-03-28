@@ -29,6 +29,7 @@ class NavBar extends React.Component {
         } else {
             return (
               <div className="nav">
+                    <Link to={'/accomodations'}>Tattoo Shops</Link>
                 <Link to={"/signup"}>Signup</Link>
                 <Link to={"/login"}>Login</Link>
               </div>
@@ -40,7 +41,7 @@ class NavBar extends React.Component {
         return (
           <div className="navbar">
             <h1 className="HAFH_logo">
-              <Link to={"/"}>A Home Away From Home</Link>
+              <Link to={"/"}>Love The Skin You're In</Link>
             </h1>
             {this.getLinks()}
           </div>
