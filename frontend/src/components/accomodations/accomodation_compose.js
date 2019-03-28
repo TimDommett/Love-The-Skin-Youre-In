@@ -91,7 +91,7 @@ class AccomodationCompose extends React.Component {
 
   render() {
     const { title, text, link, price } = this.state;
-    const preview = this.state.photoUrl ? <img className="image-preview new-post-form-child" width="100px" alt="missing" src={this.state.photoUrl} /> : null;
+    const preview = this.state.photoUrl ? <img className="image-preview new-post-form-child" width="100px" alt="" src={this.state.photoURL} /> : null;
 
 
     return (

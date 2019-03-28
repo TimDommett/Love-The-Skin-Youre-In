@@ -51,8 +51,8 @@ router.post('/',
           text: req.body.text,
           link: req.body.link,
           price: req.body.price,
-          user: req.user.id,
-          photoURL: req.user.photoURL
+          photoURL: req.body.photoURL,
+          user: req.user.id
         });
 
         newAccomodation.save().then(accomodation => res.json(accomodation));
