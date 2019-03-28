@@ -34,6 +34,7 @@ class Accomodation extends React.Component {
               text={accomodation.text}
               link={accomodation.link}
               price={accomodation.price}
+              photoURL={accomodation.photoURL}
             />
           ))}
         </div>

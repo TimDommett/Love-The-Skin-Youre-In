@@ -36,6 +36,7 @@ class AccomodationCompose extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.upload = this.upload.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -43,11 +44,18 @@ class AccomodationCompose extends React.Component {
   }
 
   upload(e) {
+
+    // const fileReader = new FileReader();
+    // e.preventDefault;
     console.log(e.target.files[0]);
-    S3Client
-      .uploadFile(e.target.files[0])
-      .then(data => console.log(data.location))
-      .catch(err => console.error(err))
+    S3Client.uploadFile(e.target.files[0])
+      .then(data =>
+        this.setState({
+          photoURL: data.location
+        })
+      )
+      // .then(data => console.log(data.location))
+      .catch(err => console.error(err));
   };
     // S3FileUpload.uploadFile(e.target.files[0], config)
     //   .then(data => console.log(data.location))
@@ -60,11 +68,18 @@ class AccomodationCompose extends React.Component {
       text: this.state.text,
       link: this.state.link,
       price: this.state.price,
+      photoURL: this.state.photoURL,
       newAccomodation: ""
     };
 
     this.props.composeAccomodation(accomodation);
-    this.setState({ text: "", title: "", link: "", price: 1 });
+    this.setState({
+      text: "",
+      title: "",
+      link: "",
+      price: 1,
+      photoURL: ""
+    });
   }
 
   update(property) {
@@ -76,6 +91,8 @@ class AccomodationCompose extends React.Component {
 
   render() {
     const { title, text, link, price } = this.state;
+    const preview = this.state.photoUrl ? <img className="image-preview new-post-form-child" width="100px" alt="missing" src={this.state.photoUrl} /> : null;
+
 
     return (
       <div>
@@ -102,6 +119,7 @@ class AccomodationCompose extends React.Component {
               placeholder="Give a link to your website..."
             />
 
+            {preview}
             <input
               type="file"
               // value={price}

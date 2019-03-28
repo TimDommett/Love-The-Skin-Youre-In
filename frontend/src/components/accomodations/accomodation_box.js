@@ -9,6 +9,8 @@ class AccomodationBox extends React.Component {
             <ul>{this.props.text}</ul>
             <ul>{this.props.link}</ul>
             <ul>{this.props.price}</ul>
+            <ul>{this.props.photoURL}</ul>
+
           </div>
         );
     }
