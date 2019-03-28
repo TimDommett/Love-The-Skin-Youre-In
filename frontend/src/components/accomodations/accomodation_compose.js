@@ -3,6 +3,7 @@ import React from 'react';
 import AccomodationBox from "./accomodation_box";
 // import S3FileUpload from "react-s3";
 import S3 from "aws-s3";
+import Maps from "../maps/maps"
 
 
 const keys = require("../../keys");
@@ -138,6 +139,7 @@ class AccomodationCompose extends React.Component {
         </form>
         <br />
         <AccomodationBox text={this.state.newAccomodation} />
+        <Maps/>
       </div>
     );
   }
