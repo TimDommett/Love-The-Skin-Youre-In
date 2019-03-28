@@ -30,7 +30,8 @@ class Profile extends React.Component {
               {this.state.accomodations.map(accomodation => (
                 <AccomodationBox
                   key={accomodation._id}
-                  text={accomodation.text}
+                  title={accomodation.title}
+                  photoURL={accomodation.photoURL}
                 />
               ))}
             </div>
