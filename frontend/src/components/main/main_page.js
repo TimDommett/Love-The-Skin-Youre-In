@@ -8,6 +8,7 @@ class MainPage extends React.Component {
         return (
           <div>
             {/* <h1>A Home Away From Home</h1> */}
+
             <div className="hero-image-frame">
             {/* <div className="bg"></div> */}
               <img

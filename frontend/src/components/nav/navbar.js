@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './navbar.css'
+import "../main/home.css";
+
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -40,6 +42,12 @@ class NavBar extends React.Component {
     render() {
         return (
           <div className="navbar">
+                <img src="https://gdurl.com/q2G0" alt="" class="circle1" />
+                <img src="https://gdurl.com/q2G0" alt="" class="circle2" />
+                <img src="https://gdurl.com/q2G0" alt="" class="circle3" />
+                <img src="https://gdurl.com/q2G0" alt="" class="circle4" />
+                <img src="https://gdurl.com/q2G0" alt="" class="circle5" />
+                <img src="https://gdurl.com/q2G0" alt="" class="circle6" />
             <h1 className="HAFH_logo">
               <Link to={"/"}>Love The Skin You're In</Link>
             </h1>

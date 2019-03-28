@@ -29,7 +29,8 @@
 }
 
 .HAFH_logo {
-    margin-left: 20px;
+    margin-left: 40%;
+    text-decoration: none;
 }
 
 .nav {
@@ -38,6 +39,8 @@
 
 .nav a {
     margin-left: 10px;
+    text-decoration: none;
+    color: black;
 }
 
 .nav button {
@@ -46,4 +49,147 @@
 
 .accomodations_container {
     margin: 40px;
+}
+
+
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+
+.circle1 {
+  position: absolute;
+/*
+  left: 50%;
+  top: 50%;
+  margin: -100px;
+  width: 200px;
+  height: 200px;
+  background: #c7cbd0;
+  border-radius: 50%;
+  box-shadow: inset -25px 0px 0 0px #9098a1;
+  -webkit-backface-visibility: hidden;
+*/
+  top: 20%;
+  left: 2%;
+   transition: transform 0.2s ease-in-out;
+	width: 5%;
+  animation: spin 10s linear infinite;
+  z-index: 20;
+}
+
+
+.circle2 {
+  position: absolute;
+/*
+  left: 50%;
+  top: 50%;
+  margin: -100px;
+  width: 200px;
+  height: 200px;
+  background: #c7cbd0;
+  border-radius: 50%;
+  box-shadow: inset -25px 0px 0 0px #9098a1;
+  -webkit-backface-visibility: hidden;
+*/
+  top: 20%;
+  left: 2%;
+   transition: transform 0.2s ease-in-out;
+	width: 5%;
+  animation: spin 25s linear infinite;
+  z-index: 20;
+}
+
+
+.circle3 {
+  position: absolute;
+/*
+  left: 50%;
+  top: 50%;
+  margin: -100px;
+  width: 200px;
+  height: 200px;
+  background: #c7cbd0;
+  border-radius: 50%;
+  box-shadow: inset -25px 0px 0 0px #9098a1;
+  -webkit-backface-visibility: hidden;
+*/
+  top: 20%;
+  left: 2%;
+   transition: transform 0.2s ease-in-out;
+	width: 5%;
+  animation: spin 50s linear infinite;
+  z-index: 20;
+}
+
+
+.circle4 {
+  position: absolute;
+/*
+  left: 50%;
+  top: 50%;
+  margin: -100px;
+  width: 200px;
+  height: 200px;
+  background: #c7cbd0;
+  border-radius: 50%;
+  box-shadow: inset -25px 0px 0 0px #9098a1;
+  -webkit-backface-visibility: hidden;
+*/
+  top: 20%;
+  left: 2%;
+   transition: transform 0.2s ease-in-out;
+	width: 5%;
+  animation: spin 40s linear infinite;
+  z-index: 20;
+}
+
+
+.circle5 {
+  position: absolute;
+/*
+  left: 50%;
+  top: 50%;
+  margin: -100px;
+  width: 200px;
+  height: 200px;
+  background: #c7cbd0;
+  border-radius: 50%;
+  box-shadow: inset -25px 0px 0 0px #9098a1;
+  -webkit-backface-visibility: hidden;
+*/
+  top: 20%;
+  left: 2%;
+   transition: transform 0.2s ease-in-out;
+	width: 5%;
+  animation: spin 30s linear infinite;
+  z-index: 20;
+}
+
+
+.circle6 {
+  position: absolute;
+/*
+  left: 50%;
+  top: 50%;
+  margin: -100px;
+  width: 200px;
+  height: 200px;
+  background: #c7cbd0;
+  border-radius: 50%;
+  box-shadow: inset -25px 0px 0 0px #9098a1;
+  -webkit-backface-visibility: hidden;
+*/
+  top: 20%;
+  left: 2%;
+   transition: transform 0.2s ease-in-out;
+	width: 5%;
+  animation: spin 20s linear infinite;
+  z-index: 20;
 }
