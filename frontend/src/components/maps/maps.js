@@ -72,12 +72,12 @@ class Maps extends React.Component {
 
     render() {
         const {
-            loc = this.state.location
+            newDefault = this.state.location
             // lat:
         //     form: { values } // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
         } = this.props;
-        const lat = loc ? loc.latitude : 34.05;
-        const lon = loc ? loc.longitude : 118.25;
+        // const lat = loc ? loc.latitude : 34.05;
+        // const lon = loc ? loc.longitude : 118.25;
 
         return (
           <div>
@@ -92,10 +92,10 @@ class Maps extends React.Component {
             <MapWithAMarker
               containerElement={<div style={{ height: `800px` }} />}
               mapElement={<div style={{ height: `100%` }} />}
-                    // defaultCenter={ lat: 0, lng: 0}
+                    center={ this.state.location}
 
-                lat={lat}
-                lng={lon}
+                // lat={lat}
+                // lng={lon}
             />
           </div>
         );
