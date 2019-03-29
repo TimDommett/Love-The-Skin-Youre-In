@@ -29,8 +29,11 @@
 }
 
 .HAFH_logo {
-    margin-left: 40%;
+    margin-left:39%;
     text-decoration: none;
+    font-family: 'Cinzel Decorative', cursive;
+
+
 }
 
 .nav {
@@ -41,6 +44,8 @@
     margin-left: 10px;
     text-decoration: none;
     color: black;
+    font-family: 'Cinzel Decorative', cursive;
+
 }
 
 .nav button {
@@ -193,3 +198,9 @@
   animation: spin 20s linear infinite;
   z-index: 20;
 }
+
+.LTSYI {
+    text-decoration: none;
+    color: black;
+}
+

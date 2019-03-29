@@ -26,7 +26,7 @@ class Accomodation extends React.Component {
     } else {
       return (
         <div className="accomodations_container">
-          <h2>All Accomodations</h2>
+          <h2 className="shops-title">All The Shops</h2>
           {this.state.accomodations.map(accomodation => (
             <AccomodationBox
               key={accomodation._id}

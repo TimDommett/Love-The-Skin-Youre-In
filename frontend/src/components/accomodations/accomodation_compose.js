@@ -1,6 +1,6 @@
 
 import React from 'react';
-import AccomodationBox from "./accomodation_box";
+// import AccomodationBox from "./accomodation_box";
 // import S3FileUpload from "react-s3";
 import S3 from "aws-s3";
 import Maps from "../maps/maps"
@@ -92,7 +92,7 @@ class AccomodationCompose extends React.Component {
 
   render() {
     const { title, text, link, price } = this.state;
-    const preview = this.state.photoUrl ? <img className="image-preview new-post-form-child" width="100px" alt="" src={this.state.photoURL} /> : null;
+    const preview = this.state.photoURL ? <img className="image-preview new-post-form-child" width="100px" alt="" src={this.state.photoURL} /> : null;
 
 
     return (
@@ -138,7 +138,7 @@ class AccomodationCompose extends React.Component {
           </div>
         </form>
         <br />
-        <AccomodationBox text={this.state.newAccomodation} />
+        {/* <AccomodationBox text={this.state.newAccomodation} /> */}
         <Maps/>
       </div>
     );
