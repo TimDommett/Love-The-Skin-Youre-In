@@ -8,15 +8,18 @@
 }
 .geosuggest__input {
   width: 100%;
-  border: 2px solid transparent;
+  border: 1px solid black;
   box-shadow: 0 0 1px #3d464d;
   padding: 0.5em 1em;
   -webkit-transition: border 0.2s, box-shadow 0.2s;
   transition: border 0.2s, box-shadow 0.2s;
+      border-radius: 20px;
+
 }
 .geosuggest__input:focus {
   border-color: #267dc0;
   box-shadow: 0 0 0 transparent;
+  border-radius: 20px;
 }
 .geosuggest__suggests {
   position: absolute;
@@ -35,6 +38,7 @@
   z-index: 5;
   -webkit-transition: max-height 0.2s, border 0.2s;
   transition: max-height 0.2s, border 0.2s;
+
 }
 .geosuggest__suggests--hidden {
   max-height: 0;

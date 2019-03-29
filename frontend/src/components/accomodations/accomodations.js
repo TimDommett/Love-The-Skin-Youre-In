@@ -20,6 +20,8 @@ class Accomodation extends React.Component {
       this.setState({ accomodations: newState.accomodations });
   }
 
+  // order by rating
+
   render() {
       if (this.state.accomodations.length === 0) {
         return <div></div>;

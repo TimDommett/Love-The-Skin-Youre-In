@@ -41,7 +41,7 @@ export class Maps extends React.Component {
                 {/* <div>{values.longitude}</div>
                 <div>{values.latitude}</div> */}
                 <MapWithAMarker
-                    containerElement={<div style={{ height: `400px` }} />}
+                    containerElement={<div style={{ height: `800px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
                 />
                 

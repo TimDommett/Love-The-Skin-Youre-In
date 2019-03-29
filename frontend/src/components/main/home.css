@@ -30,10 +30,42 @@
 
 }
 
+.tatoo-machine {
+    position: absolute;
+    margin-left: 83%;
+    top: 400px;
+  }
+  .tattoo-machine-copy{
+      position: absolute;
+      margin-left: 85.2%;
+      top: 352px;
+      text-align: center;
+      color: black;
+      font-size: larger;
+  }
+
+  .home-map {
+    position: absolute;
+    top: 110%;
+    width: 90%;
+    left: 5%;
+    height: 100%;
+    
+  }
+
+  .home-map-title {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Cinzel Decorative', cursive;
+
+  }
+
+/* CSS ANIMATIONS */
+
 
 .updown {
   animation: MoveUpDown 1s linear infinite;
-  position: absolute;
+  /* position: absolute; */
   /* left: 0;
   bottom: 0; */
 }
@@ -47,3 +79,12 @@
   }
 }
 
+
+img.vert-move {
+    -webkit-animation: mover 0.7s infinite  alternate;
+    animation: mover 0.7s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
