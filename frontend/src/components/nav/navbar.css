@@ -85,7 +85,7 @@
   left: 2%;
    transition: transform 0.2s ease-in-out;
 	width: 5%;
-  animation: spin 10s linear infinite;
+  animation: spin 60s linear infinite;
   z-index: 20;
 }
 
@@ -107,7 +107,7 @@
   left: 2%;
    transition: transform 0.2s ease-in-out;
 	width: 5%;
-  animation: spin 25s linear infinite;
+  animation: spin 70s linear infinite;
   z-index: 20;
 }
 
@@ -195,7 +195,7 @@
   left: 2%;
    transition: transform 0.2s ease-in-out;
 	width: 5%;
-  animation: spin 20s linear infinite;
+  animation: spin 25s linear infinite;
   z-index: 20;
 }
 
