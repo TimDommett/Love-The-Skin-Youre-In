@@ -12,49 +12,92 @@ import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 const google = window.google;
 
 
+// const this.state.location ? 
+
 const MapWithAMarker = withGoogleMap(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-    <Marker position={{ lat: -34.397, lng: 150.644 }} />
+    
+  <GoogleMap
+    defaultZoom={12}
+    defaultCenter={{ lat: -33.9248685, lng: 18.424055299999964 }}
+  >
+    <Marker position={{ lat: -33.9248685, lng: 18.424055299999964 }} />
   </GoogleMap>
 ));
 
-export class Maps extends React.Component {
-    onSuggestSelect = (place: Suggest) => {
-        const {
-            location: { lat, lng }
-        } = place;
-        const {
-            form: { setValues, values }
-        } = this.props;
-        setValues({
-            ...values,
-            latitude: lat,
-            longitude: lng
+class Maps extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+        //     lat: "",
+        //     lng:
+        location: null,
+        defaultCenter: { lat: -34.397, lng: 150.644 }
+           
+        };
+
+        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.onSuggestSelect = this.onSuggestSelect.bind(this);
+    }
+
+
+
+
+    onSuggestSelect = function(suggest) {
+        // suggest ? {
+        this.setState({
+          location: suggest.location,
+          defaultCenter: {
+            lat: suggest.location.lat,
+            lng: suggest.location.lng
+          }
         });
-    };
+        console.log(this.state.location.lat);
+        console.log(this.state.location.lng);
+        // } :
+        // {console.log("nothing selected")};
+
+        // const {
+        //     location: { lat, lng }
+        // } = place;
+        // const {
+        //     form: { setValues, values }
+        // } = this.props;
+        // setValues({
+        //     ...values,
+        //     latitude: lat,
+        //     longitude: lng
+        // });
+    }
 
     render() {
-        // const {
+        const {
+            loc = this.state.location
             // lat:
         //     form: { values } // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-        // } = this.props;
+        } = this.props;
+        const lat = loc ? loc.latitude : 34.05;
+        const lon = loc ? loc.longitude : 118.25;
 
         return (
-            <div>
-                <Geosuggest
-                    placeholder="Start typing!"
-                    onSuggestSelect={this.onSuggestSelect}
-                    location={new google.maps.LatLng(53.558572, 9.9278215)}
-                    radius={20}
-                />
-                {/* <div>{values.longitude}</div>
-                <div>{values.latitude}</div> */}
-                <MapWithAMarker
-                    containerElement={<div style={{ height: `800px` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                />
-                
-            </div>
+          <div>
+            <Geosuggest
+              placeholder="Start typing!"
+              onSuggestSelect={this.onSuggestSelect}
+              location={new google.maps.LatLng(53.558572, 9.9278215)}
+              radius={20}
+            />
+            {/* <div>{this.state.location.lat}</div>
+                <div>{this.state.location.lng}</div> */}
+            <MapWithAMarker
+              containerElement={<div style={{ height: `800px` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+                    // defaultCenter={ lat: 0, lng: 0}
+
+                lat={lat}
+                lng={lon}
+            />
+          </div>
         );
     }
 }
