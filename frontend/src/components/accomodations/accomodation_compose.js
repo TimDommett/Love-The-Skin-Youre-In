@@ -70,6 +70,8 @@ class AccomodationCompose extends React.Component {
       link: this.state.link,
       price: this.state.price,
       photoURL: this.state.photoURL,
+      lat: this.state.location.lat,
+      lng: this.state.location.lng,
       newAccomodation: ""
     };
 
