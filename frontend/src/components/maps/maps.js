@@ -1,13 +1,22 @@
 import * as React from "react";
 // import { FieldProps } from "formik";
 import Geosuggest, { Suggest } from "react-geosuggest";
-import MapWithAMarker from "./map";
+// import MapWithAMarker from "./map";
 
 import "./geo.css";
+
+
+
+import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
 const google = window.google;
 
 
+const MapWithAMarker = withGoogleMap(props => (
+  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+    <Marker position={{ lat: -34.397, lng: 150.644 }} />
+  </GoogleMap>
+));
 
 export class Maps extends React.Component {
     onSuggestSelect = (place: Suggest) => {
