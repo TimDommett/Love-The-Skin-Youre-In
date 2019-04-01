@@ -31,7 +31,11 @@ class AccomodationBox extends React.Component {
       if (this.state.description) {
         description = (
           <div className="whole-page fade-in">
-            <p className="close-detail" onClick={this.toggleDetail}>X</p>
+            {/* <p className="close-detail" onClick={this.toggleDetail}>Close</p> */}
+            
+            <button onClick={this.toggleDetail}>
+              Close
+            </button>
             <ShopShow
               key={this.props._id}
               title={this.props.title}

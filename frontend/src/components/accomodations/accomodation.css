@@ -75,6 +75,76 @@
     /* set to an x image */
 }
 
+.close-detail {
+  /* background-color: grey;
+  text-align: center; */
+}
+
+button {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  color: transparent;
+  cursor: pointer;
+  line-height: 60px;
+  
+    margin: 50px 0 0;
+    outline: none;
+    margin-left: 95%;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+  width: 60px;
+  z-index: 1000;
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: large;
+
+}
+
+button::before,
+button::after {
+  background-color: white;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform-origin: center left;
+  transition: all 0.2s ease-in;
+  width: 100px;
+  z-index: -1;
+  /* border-radius: 5px; */
+}
+
+button::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+button::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+    /* border-radius: 5px; */
+
+}
+
+button:hover {
+  color: black;
+}
+
+button:hover::before,
+button:hover::after {
+  height: 30px;
+  transform: rotate(0deg);
+    border-radius: 2px;
+
+}
+
+
+
+
 
 /* Move into transitions.css */
 

@@ -30,10 +30,11 @@ class Maps extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
+        this.state = {  
+            location: { lat: -33.9248685, lng: 18.424055299999964 },
         //     lat: "",
         //     lng:
-        location: null,
+        // location: null,
         defaultCenter: { lat: -34.397, lng: 150.644 }
            
         };
@@ -95,10 +96,10 @@ class Maps extends React.Component {
             <MapWithAMarker
               containerElement={<div style={{ height: `800px` }} />}
               mapElement={<div style={{ height: `100%` }} />}
-                    center={ this.state.location}
+                currentLocation={this.state.defaultCenter}
 
-                // lat={lat}
-                // lng={lon}
+              // lat={lat}
+              // lng={lon}
             />
           </div>
         );
