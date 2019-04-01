@@ -2,6 +2,8 @@ import * as React from "react";
 // import { FieldProps } from "formik";
 import Geosuggest, { Suggest } from "react-geosuggest";
 // import MapWithAMarker from "./map";
+import MarkerManager from "../../utils/marker_manager";
+
 
 import "./geo.css";
 
