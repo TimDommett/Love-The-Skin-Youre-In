@@ -80,7 +80,7 @@
   text-align: center; */
 }
 
-button {
+button.close-detail {
   background: none;
   border: 0;
   box-sizing: border-box;
@@ -103,8 +103,8 @@ button {
 
 }
 
-button::before,
-button::after {
+button.close-detail::before,
+button.close-detail::after {
   background-color: white;
   content: "";
   display: block;
@@ -118,24 +118,24 @@ button::after {
   /* border-radius: 5px; */
 }
 
-button::before {
+button.close-detail::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-button::after {
+button.close-detail::after {
   bottom: 0;
   transform: rotate(-45deg);
     /* border-radius: 5px; */
 
 }
 
-button:hover {
+button.close-detail:hover {
   color: black;
 }
 
-button:hover::before,
-button:hover::after {
+button.close-detail:hover::before,
+button.close-detail:hover::after {
   height: 30px;
   transform: rotate(0deg);
     border-radius: 2px;

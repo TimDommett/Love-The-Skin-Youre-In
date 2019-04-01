@@ -32,8 +32,11 @@ class AccomodationBox extends React.Component {
         description = (
           <div className="whole-page fade-in">
             {/* <p className="close-detail" onClick={this.toggleDetail}>Close</p> */}
-            
-            <button onClick={this.toggleDetail}>
+
+            <button
+              onClick={this.toggleDetail}
+              className="close-detail"
+            >
               Close
             </button>
             <ShopShow
