@@ -86,6 +86,7 @@ class Maps extends React.Component {
               onSuggestSelect={this.onSuggestSelect}
               location={new google.maps.LatLng(53.558572, 9.9278215)}
               radius={20}
+              placeholder={"Type your address here..."}
             />
             {/* <div>{this.state.location.lat}</div>
                 <div>{this.state.location.lng}</div> */}
