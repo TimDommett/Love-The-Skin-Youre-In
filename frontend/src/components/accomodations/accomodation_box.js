@@ -12,11 +12,11 @@ class AccomodationBox extends React.Component {
               src={this.props.photoURL}
               alt="missing"
             />
+            <ul>{this.props.price}</ul>
             <h3 className="shop-title">{this.props.title}</h3>
 
             <ul>{this.props.text}</ul>
             <ul>{this.props.link}</ul>
-            <ul>{this.props.price}</ul>
           </div>
         );
     }

@@ -2,6 +2,8 @@
 import React from 'react';
 import "./home.css";
 import Maps from "../maps/maps";
+import { Link } from "react-router-dom";
+
 
 
 class MainPage extends React.Component {
@@ -36,9 +38,11 @@ class MainPage extends React.Component {
                 <h2 className="home-map-title">
                   Search For Tattoo Shops Near You
                 </h2>
-                <Maps />
+                <Maps 
+                />
               </div>
             </div>
+            <Link to={'/accomodations'} className="see-all-button">See All Tattoo Studios Here</Link>
           </div>
         );
     }
