@@ -71,13 +71,11 @@
     /* overflow: hidden; */
 }
 
-.close-detail {
-    /* set to an x image */
-}
+.whole-page img { 
+    /* width: 50%;
+    margin-left: 25%;
+    margin-right: 25%; */
 
-.close-detail {
-  /* background-color: grey;
-  text-align: center; */
 }
 
 button.close-detail {
