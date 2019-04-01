@@ -35,6 +35,12 @@
     text-decoration: underline;
 }
 
+.shop-form {
+    display: flex;
+    width: 50%;
+    padding-left: 25%;
+}
+
 
 /* Move into transitions.css */
 

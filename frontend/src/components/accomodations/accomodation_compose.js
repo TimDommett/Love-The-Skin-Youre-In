@@ -99,7 +99,7 @@ class AccomodationCompose extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="shop-form">
           <div>
             <input
               type="text"
@@ -141,7 +141,7 @@ class AccomodationCompose extends React.Component {
         </form>
         <br />
         {/* <AccomodationBox text={this.state.newAccomodation} /> */}
-        <Maps/>
+        <Maps />
       </div>
     );
   }
