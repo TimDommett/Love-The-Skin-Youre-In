@@ -78,6 +78,14 @@
 
 }
 
+.shop-link { 
+    /* width: 50%;
+    margin-left: 25%;
+    margin-right: 25%; */
+    padding-bottom: 500px;
+
+}
+
 button.close-detail {
   background: none;
   border: 0;

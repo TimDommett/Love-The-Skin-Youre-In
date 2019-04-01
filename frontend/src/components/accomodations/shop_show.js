@@ -44,7 +44,7 @@ class ShopShow extends React.Component {
                 <h3 className="shop-title">{this.props.title}</h3>
 
                 <ul>{this.props.text}</ul>
-            <ul>{this.props.link}</ul>
+            <ul className="shop-link">{this.props.link}</ul>
                 {/* {description} */}
                 {/* add a map showing where it is and some proper styling */}
             </div>
