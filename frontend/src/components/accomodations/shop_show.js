@@ -46,6 +46,7 @@ class ShopShow extends React.Component {
                 <ul>{this.props.text}</ul>
             <ul>{this.props.link}</ul>
                 {/* {description} */}
+                {/* add a map showing where it is and some proper styling */}
             </div>
         );
     }
