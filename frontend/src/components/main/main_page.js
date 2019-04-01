@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 
 class MainPage extends React.Component {
 
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+  }
+
     render() {
         return (
           <div>
@@ -22,7 +26,7 @@ class MainPage extends React.Component {
               />
 
               {/* <a href="#home-map"> */}
-              <div className="updown ">
+              <div className="updown " onClick={this.scrollToBottom}>
                 <p className="tattoo-machine-copy fade-in-delayed">
                   Scroll Down
                 </p>
@@ -38,11 +42,19 @@ class MainPage extends React.Component {
                 <h2 className="home-map-title">
                   Search For Tattoo Shops Near You
                 </h2>
-                <Maps 
-                />
+                <Maps />
               </div>
             </div>
-            <Link to={'/accomodations'} className="see-all-button">See All Tattoo Studios Here</Link>
+            <Link to={"/accomodations"} className="see-all-button">
+              See All Tattoo Studios Here
+            </Link>
+            <div
+              style={{ clear: "both" }}
+              ref={el => {
+                this.messagesEnd = el;
+              }}
+              className="bottom-of-page"
+            />
           </div>
         );
     }
