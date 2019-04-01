@@ -18,7 +18,9 @@
 }
 
 .shop-title {
+
     text-align: center;
+    margin-top: 0;
 }
 
 .shop-photo {
@@ -39,6 +41,11 @@
     display: flex;
     width: 50%;
     padding-left: 25%;
+}
+
+.shop-price {
+    padding-left: 31px;
+    padding-top: 10px;
 }
 
 

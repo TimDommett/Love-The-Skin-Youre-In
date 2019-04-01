@@ -20,6 +20,7 @@ class AccomodationBox extends React.Component {
               renderStarIcon={() => <span>$</span>}
               starCount={5}
               value={this.props.price}
+              className={"shop-price"}
             />
             <h3 className="shop-title">{this.props.title}</h3>
 
