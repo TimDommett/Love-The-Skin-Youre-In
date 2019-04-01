@@ -99,6 +99,15 @@ class AccomodationCompose extends React.Component {
       });
   }
 
+  onKeyPress(event) {
+    if (event.which === 13 /* Enter */) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      // this.value = this.value + "\n";
+    }
+  }
+
   render() {
     const { title, text, link, price } = this.state;
     const preview = this.state.photoURL ? <img className="image-preview new-post-form-child" width="100px" alt="" src={this.state.photoURL} /> : null;
@@ -106,7 +115,7 @@ class AccomodationCompose extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit} className="shop-form">
+        <form onSubmit={this.handleSubmit} onKeyPress={this.onKeyPress} className="shop-form">
           <div>
             <input
               type="text"
