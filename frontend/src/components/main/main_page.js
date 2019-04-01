@@ -28,8 +28,8 @@ class MainPage extends React.Component {
               {/* <a href="#home-map"> */}
               <div className="updown " onClick={this.scrollToBottom}>
                 <p className="tattoo-machine-copy fade-in-delayed">
-                  Scroll Down
-                  {/* Click Me */}
+                  {/* Scroll Down */}
+                  Click Me!
                 </p>
                 <img
                   className="tatoo-machine vert-move "
