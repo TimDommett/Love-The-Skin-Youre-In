@@ -29,6 +29,7 @@ class MainPage extends React.Component {
               <div className="updown " onClick={this.scrollToBottom}>
                 <p className="tattoo-machine-copy fade-in-delayed">
                   Scroll Down
+                  {/* click here */}
                 </p>
                 <img
                   className="tatoo-machine vert-move "
