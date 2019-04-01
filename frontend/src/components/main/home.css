@@ -43,6 +43,13 @@
       color: black;
       font-size: larger;
   }
+ 
+  .tatoo-machine:hover {
+    cursor: pointer;
+  }
+  .tattoo-machine-copy:hover {
+    cursor: pointer;
+  }
 
   .home-map {
     position: absolute;
