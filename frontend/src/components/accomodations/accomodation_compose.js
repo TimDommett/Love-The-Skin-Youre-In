@@ -4,6 +4,8 @@ import React from 'react';
 // import S3FileUpload from "react-s3";
 import S3 from "aws-s3";
 import Maps from "../maps/maps"
+import StarRatingComponent from "react-star-rating-component";
+
 
 
 const keys = require("../../keys");
@@ -85,6 +87,11 @@ class AccomodationCompose extends React.Component {
     });
   }
 
+
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({ price: nextValue });
+  }
+
   update(property) {
     return e =>
       this.setState({
@@ -129,13 +136,24 @@ class AccomodationCompose extends React.Component {
               onChange={this.upload}
               // placeholder="Write your accomodation..."
             />
-            <select value={price} onChange={this.update("price")}>
+            <div>
+              {/* <h2>Rating from state: {price}</h2> */}
+              <StarRatingComponent
+                name="rate1"
+                starCount={5}
+                value={price}
+                renderStarIcon={() => <span>$</span>}
+
+                onStarClick={this.onStarClick.bind(this)}
+              />
+            </div>
+            {/* <select value={price} onChange={this.update("price")}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-            </select>
+            </select> */}
             <input type="submit" value="Submit" />
           </div>
         </form>
