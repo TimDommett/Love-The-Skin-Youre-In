@@ -33,7 +33,11 @@ class AccomodationCompose extends React.Component {
       text: "",
       link: "",
       price: 1,
-      photoURL: "", 
+      photoURL: "",
+      location:null,
+      lat: null,
+      lng: null,
+
       // set the default here in photoURL
       newAccomodation: ""
     };
@@ -109,13 +113,17 @@ class AccomodationCompose extends React.Component {
   }
 
   render() {
-    const { title, text, link, price } = this.state;
+    const { title, text, link, price, location } = this.state;
     const preview = this.state.photoURL ? <img className="image-preview new-post-form-child" width="100px" alt="" src={this.state.photoURL} /> : null;
 
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit} onKeyPress={this.onKeyPress} className="shop-form">
+        <form
+          onSubmit={this.handleSubmit}
+          onKeyPress={this.onKeyPress}
+          className="shop-form"
+        >
           <div>
             <input
               type="text"
@@ -152,7 +160,6 @@ class AccomodationCompose extends React.Component {
                 starCount={5}
                 value={price}
                 renderStarIcon={() => <span>$</span>}
-
                 onStarClick={this.onStarClick.bind(this)}
               />
             </div>
@@ -168,7 +175,7 @@ class AccomodationCompose extends React.Component {
         </form>
         <br />
         {/* <AccomodationBox text={this.state.newAccomodation} /> */}
-        <Maps />
+        <Maps location={this.state.location} />
       </div>
     );
   }
