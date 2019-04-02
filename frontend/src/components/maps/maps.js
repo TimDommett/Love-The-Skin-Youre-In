@@ -16,15 +16,7 @@ const google = window.google;
 
 // const this.state.location ? 
 
-const MapWithAMarker = withGoogleMap(props => (
-    
-  <GoogleMap
-    defaultZoom={12}
-    defaultCenter={{ lat: -33.9248685, lng: 18.424055299999964 }}
-  >
-    <Marker position={{ lat: -33.9248685, lng: 18.424055299999964 }} />
-  </GoogleMap>
-));
+
 
 class Maps extends React.Component {
     constructor(props) {
@@ -54,9 +46,10 @@ class Maps extends React.Component {
             lat: suggest.location.lat,
             lng: suggest.location.lng
           }
-        });
-        console.log(this.state.location.lat);
-        console.log(this.state.location.lng);
+        }, () => console.log(this.state.location))
+        // );
+        // console.log(this.state.location.lat);
+        // console.log(this.state.location.lng);
         // } :
         // {console.log("nothing selected")};
 
@@ -71,6 +64,13 @@ class Maps extends React.Component {
         //     latitude: lat,
         //     longitude: lng
         // });
+    //     `this.setState({
+    // location: suggest.location,
+    //      defaultCenter: {
+    //        lat: suggest.location.lat,
+    //        lng: suggest.location.lng
+    //      }
+    //    }, ( ) => console.log(this.state.location))`;
     }
 
     render() {
@@ -81,6 +81,15 @@ class Maps extends React.Component {
         } = this.props;
         // const lat = loc ? loc.latitude : 34.05;
         // const lon = loc ? loc.longitude : 118.25;
+        const MapWithAMarker = withGoogleMap(props => (
+
+            <GoogleMap
+                defaultZoom={12}
+                defaultCenter={newDefault}
+            >
+                <Marker position={newDefault} />
+            </GoogleMap>
+        ));
 
         return (
           <div>
