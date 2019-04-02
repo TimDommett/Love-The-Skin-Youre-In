@@ -34,7 +34,9 @@ class AccomodationCompose extends React.Component {
       link: "",
       price: 1,
       photoURL: "",
-      location:null,
+      location: { lat: -33.9248685, lng: 18.424055299999964 },
+      defaultCenter: { lat: -34.397, lng: 150.644 },
+      // location:null,
       lat: null,
       lng: null,
 
@@ -44,6 +46,8 @@ class AccomodationCompose extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.upload = this.upload.bind(this);
+    this.onSuggestSelect = this.onSuggestSelect.bind(this);
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -64,9 +68,20 @@ class AccomodationCompose extends React.Component {
       // .then(data => console.log(data.location))
       .catch(err => console.error(err));
   };
+
+  onSuggestSelect = function (suggest) {
+    // suggest ? {
+    this.setState({
+      location: suggest.location,
+      defaultCenter: {
+        lat: suggest.location.lat,
+        lng: suggest.location.lng
+      }
+    }, () => console.log(this.state.location))
     // S3FileUpload.uploadFile(e.target.files[0], config)
     //   .then(data => console.log(data.location))
     //   .catch(err => alert(err))
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -175,7 +190,7 @@ class AccomodationCompose extends React.Component {
         </form>
         <br />
         {/* <AccomodationBox text={this.state.newAccomodation} /> */}
-        <Maps location={this.state.location} />
+        <Maps location={this.state.location} onSuggestSelect={this.onSuggestSelect}/>
       </div>
     );
   }

@@ -19,34 +19,26 @@ const google = window.google;
 
 
 class Maps extends React.Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.state = {  
-            location: { lat: -33.9248685, lng: 18.424055299999964 },
+    //     this.state = {  
+    //         location: { lat: -33.9248685, lng: 18.424055299999964 },
         //     lat: "",
         //     lng:
         // location: null,
-        defaultCenter: { lat: -34.397, lng: 150.644 }
+        // defaultCenter: { lat: -34.397, lng: 150.644 }
            
-        };
+        // };
 
         // this.handleSubmit = this.handleSubmit.bind(this);
-        this.onSuggestSelect = this.onSuggestSelect.bind(this);
-    }
+    //     this.onSuggestSelect = this.onSuggestSelect.bind(this);
+    // }
 
 
 
 
-    onSuggestSelect = function(suggest) {
-        // suggest ? {
-        this.setState({
-          location: suggest.location,
-          defaultCenter: {
-            lat: suggest.location.lat,
-            lng: suggest.location.lng
-          }
-        }, () => console.log(this.state.location))
+
         // );
         // console.log(this.state.location.lat);
         // console.log(this.state.location.lng);
@@ -71,11 +63,11 @@ class Maps extends React.Component {
     //        lng: suggest.location.lng
     //      }
     //    }, ( ) => console.log(this.state.location))`;
-    }
+    // }
 
     render() {
         const {
-            newDefault = this.state.location
+            newDefault = this.props.location
             // lat:
         //     form: { values } // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
         } = this.props;
@@ -95,7 +87,7 @@ class Maps extends React.Component {
           <div>
             <Geosuggest
               placeholder="Start typing!"
-              onSuggestSelect={this.onSuggestSelect}
+              onSuggestSelect={this.props.onSuggestSelect}
               location={new google.maps.LatLng(53.558572, 9.9278215)}
               radius={20}
               placeholder={"Type your address here..."}
@@ -105,7 +97,7 @@ class Maps extends React.Component {
             <MapWithAMarker
               containerElement={<div style={{ height: `800px` }} />}
               mapElement={<div style={{ height: `100%` }} />}
-                currentLocation={this.state.defaultCenter}
+                currentLocation={this.props.defaultCenter}
 
               // lat={lat}
               // lng={lon}
