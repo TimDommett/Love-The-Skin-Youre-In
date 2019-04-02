@@ -26,7 +26,7 @@ class Profile extends React.Component {
         } else {
           return (
             <div>
-              <h2>All of This User's accomodations</h2>
+              <h2>All Your Advertisements</h2>
               {this.state.accomodations.map(accomodation => (
                 <AccomodationBox
                   key={accomodation._id}

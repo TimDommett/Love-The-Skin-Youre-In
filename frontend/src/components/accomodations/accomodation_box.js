@@ -3,6 +3,8 @@ import React from 'react';
 import "./accomodation.css"
 import StarRatingComponent from "react-star-rating-component";
 import ShopShow from "./shop_show";
+import ReviewCompose from "../reviews/review_compose_container";
+import Reviews from "../reviews/reviews_container";
 
 
 class AccomodationBox extends React.Component {
@@ -32,7 +34,6 @@ class AccomodationBox extends React.Component {
         description = (
           <div className="whole-page fade-in">
             {/* <p className="close-detail" onClick={this.toggleDetail}>Close</p> */}
-
             <button
               onClick={this.toggleDetail}
               className="close-detail"
@@ -47,6 +48,8 @@ class AccomodationBox extends React.Component {
               price={this.props.price}
               photoURL={this.props.photoURL}
             />
+            <ReviewCompose accomodation={this.props._id} />
+            <Reviews accomodation={this.props._id} />
           </div>
         );
       };
