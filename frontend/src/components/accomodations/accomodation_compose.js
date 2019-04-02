@@ -73,11 +73,13 @@ class AccomodationCompose extends React.Component {
     // suggest ? {
     this.setState({
       location: suggest.location,
+      lat: suggest.location.lat,
+      lng: suggest.location.lng,
       defaultCenter: {
         lat: suggest.location.lat,
         lng: suggest.location.lng
       }
-    }, () => console.log(this.state.location))
+    }, () => console.log(this.state.location.lat))
     // S3FileUpload.uploadFile(e.target.files[0], config)
     //   .then(data => console.log(data.location))
     //   .catch(err => alert(err))
@@ -91,8 +93,8 @@ class AccomodationCompose extends React.Component {
       link: this.state.link,
       price: this.state.price,
       photoURL: this.state.photoURL,
-      lat: this.state.location.lat,
-      lng: this.state.location.lng,
+      lat: this.state.lat,
+      lng: this.state.lng,
       newAccomodation: ""
     };
 

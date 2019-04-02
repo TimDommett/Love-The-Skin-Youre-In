@@ -52,6 +52,8 @@ router.post('/',
           link: req.body.link,
           price: req.body.price,
           photoURL: req.body.photoURL,
+          lat: req.body.lat,
+          lng: req.body.lng,
           user: req.user.id
         });
 
