@@ -60,12 +60,12 @@ class AccomodationBox extends React.Component {
                         alt="missing"
                     /> */}
                     <StarRatingComponent
-                        name="rate2"
+                        name="rate3"
                         editing={false}
                         // renderStarIcon={() => <span>$</span>}
                         starCount={5}
                         value={this.props.rating}
-                        className={"shop-price"}
+                        className={"shop-rating"}
                     />
                     {/* <h3 className="shop-title">{this.props.title}</h3> */}
 

@@ -45,6 +45,7 @@ class Review extends React.Component {
                         <ReviewBox
                             key={review._id}
                             comment={review.comment}
+                            rating={review.rating}
                             // text={review.text}
                             // link={review.link}
                             // price={review.price}
