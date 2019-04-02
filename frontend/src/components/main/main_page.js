@@ -7,6 +7,32 @@ import { Link } from "react-router-dom";
 
 
 class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+  location: { lat: -33.9248685, lng: 18.424055299999964 },
+  defaultCenter: { lat: -34.397, lng: 150.644 },
+    };
+    this.onSuggestSelect = this.onSuggestSelect.bind(this);
+
+  };
+
+  onSuggestSelect = function (suggest) {
+    // suggest ? {
+    this.setState({
+      location: suggest.location,
+      lat: suggest.location.lat,
+      lng: suggest.location.lng,
+      defaultCenter: {
+        lat: suggest.location.lat,
+        lng: suggest.location.lng
+      }
+    }, () => console.log(this.state.location.lat))
+    // S3FileUpload.uploadFile(e.target.files[0], config)
+    //   .then(data => console.log(data.location))
+    //   .catch(err => alert(err))
+  }
 
   scrollToBottom = () => {
     this.messagesEnd.scrollIntoView({ behavior: "smooth" });
@@ -43,7 +69,10 @@ class MainPage extends React.Component {
                 <h2 className="home-map-title">
                   Search For Tattoo Shops Near You
                 </h2>
-                <Maps />
+                <Maps 
+                  location={this.state.location} 
+                  onSuggestSelect={this.onSuggestSelect}
+                />
               </div>
             </div>
             <Link to={"/accomodations"} className="see-all-button">
