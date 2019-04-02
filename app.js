@@ -4,6 +4,7 @@ const accomodations = require("./routes/api/accomodations");
 const bodyParser = require("body-parser");
 const User = require("./models/User");
 const passport = require("passport");
+const reviews = require("./routes/api/reviews");
 
 const express = require("express");
 const app = express();
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/accomodations", accomodations);
+app.use("/api/reviews", reviews);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
