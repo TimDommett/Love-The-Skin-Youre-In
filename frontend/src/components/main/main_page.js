@@ -5,6 +5,13 @@ import Maps from "../maps/maps";
 import { Link } from "react-router-dom";
 
 
+const google = window.google;
+const burritos = [
+  { location: {lat: -33.9375585, lng: 18.472116899999946}, name: "Papalote" },
+  { location: {lat: 37.772045, lng: -122.437015}, name: "The Little Chihuahua" },
+  { location: {lat: -33.9657883, lng: 18.481019999999944}, name: "Cancun" }
+];
+
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -17,6 +24,14 @@ class MainPage extends React.Component {
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
 
   };
+
+  componentWillMount() {
+    this.props.fetchAccomodations();
+  }
+
+  componentWillReceiveProps(newState) {
+    this.setState({ accomodations: newState.accomodations });
+  }
 
   onSuggestSelect = function (suggest) {
     // suggest ? {
@@ -32,6 +47,31 @@ class MainPage extends React.Component {
     // S3FileUpload.uploadFile(e.target.files[0], config)
     //   .then(data => console.log(data.location))
     //   .catch(err => alert(err))
+  }
+
+  updateMarkers(accomodations) {
+    const accomodationsObj = {};
+    accomodations.forEach(accomodation => accomodationsObj[accomodation.id] = accomodation);
+
+    accomodations
+      .filter(accomodation => !this.markers[accomodation.id])
+      .forEach(newBench => this.createMarkerFromBench(newBench, this.handleClick))
+
+    Object.keys(this.markers)
+      .filter(accomodationId => !accomodationsObj[accomodationId])
+      .forEach((accomodationId) => this.removeMarker(this.markers[accomodationId]))
+  }
+
+  createMarkerFromBench(accomodation) {
+    const position = new google.maps.LatLng(accomodation.lat, accomodation.lng);
+    const marker = new google.maps.Marker({
+      position,
+      map: this.map,
+      accomodationId: accomodation.id
+    });
+
+    marker.addListener('click', () => this.handleClick(accomodation));
+    this.markers[marker.accomodationId] = marker;
   }
 
   scrollToBottom = () => {
@@ -69,9 +109,11 @@ class MainPage extends React.Component {
                 <h2 className="home-map-title">
                   Search For Tattoo Shops Near You
                 </h2>
-                <Maps 
-                  location={this.state.location} 
+                <Maps
+                  location={this.state.location}
                   onSuggestSelect={this.onSuggestSelect}
+                  // burritos={this.state.accomodations}
+                  burritoPlaces={burritos}
                 />
               </div>
             </div>

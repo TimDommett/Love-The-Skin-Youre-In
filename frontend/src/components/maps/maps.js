@@ -15,10 +15,50 @@ const google = window.google;
 
 
 // const this.state.location ? 
+// const burritos = this.props.burritos;
 
 
 
 class Maps extends React.Component {
+    constructor(props) {
+        super(props);
+        // const burritos = this.props.burritos;
+
+        this.state = {
+            shops: []
+        };
+        this.addBurritoPlace = this.addBurritoPlace.bind(this);
+    }
+
+
+    componentDidMount() {
+        this.props.burritoPlaces.forEach(this.addBurritoPlace);
+    }
+
+    addBurritoPlace(burritoPlace) {
+        /*
+         * we make an instance of the google maps LatLng class, args are
+         * (lat, lng)
+         */
+        const pos = new google.maps.LatLng(burritoPlace.lat, burritoPlace.lng);
+
+        /* 
+         * then we use our new instance of LatLng to make a marker
+         * set map to this.map, this is what adds it to the map
+         * when we want to remove this marker, we need to set its
+         * map property to null using myMarker.setMap(null)
+         */
+        const marker = new google.maps.Marker({
+            position: pos,
+            map: this.map
+        });
+        this.state.shops.push(marker);
+
+        // when the marker is clicked on, alert the name
+        marker.addListener('click', () => {
+            alert(`clicked on: ${burritoPlace.name}`);
+        });
+    }
     // constructor(props) {
     //     super(props);
 
@@ -74,13 +114,28 @@ class Maps extends React.Component {
         // const lat = loc ? loc.latitude : 34.05;
         // const lon = loc ? loc.longitude : 118.25;
         const MapWithAMarker = withGoogleMap(props => (
-
-            <GoogleMap
-                defaultZoom={12}
-                defaultCenter={newDefault}
-            >
-                <Marker position={newDefault} />
-            </GoogleMap>
+          <GoogleMap
+            defaultZoom={12}
+            defaultCenter={newDefault}
+            // burritoPlaces={this.state.shops}
+          >
+                {this.props.burritoPlaces.map((shop, index) => {
+                    return (
+                        <Marker
+                            position={shop.location}
+                            // title="Click to zoom"
+                            // onClick={props.onMarkerClick}
+                        />
+                    )
+                })}
+            <Marker position={newDefault} />
+            {/* {this.state.accomodations.map(accomodation => (
+                    location = accomodation.lat, accomodation.lng 
+                    < Marker
+                            position={ location }
+                    />
+                    )} */}
+          </GoogleMap>
         ));
 
         return (
@@ -98,6 +153,7 @@ class Maps extends React.Component {
               containerElement={<div style={{ height: `800px` }} />}
               mapElement={<div style={{ height: `100%` }} />}
                 currentLocation={this.props.defaultCenter}
+                    
 
               // lat={lat}
               // lng={lon}
