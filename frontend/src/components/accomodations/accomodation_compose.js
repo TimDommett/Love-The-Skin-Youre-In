@@ -5,6 +5,7 @@ import React from 'react';
 import S3 from "aws-s3";
 import Maps from "../maps/maps"
 import StarRatingComponent from "react-star-rating-component";
+import MapForForms from '../maps/map_for_forms';
 
 
 
@@ -192,7 +193,7 @@ class AccomodationCompose extends React.Component {
         </form>
         <br />
         {/* <AccomodationBox text={this.state.newAccomodation} /> */}
-        <Maps location={this.state.location} onSuggestSelect={this.onSuggestSelect}/>
+        <MapForForms location={this.state.location} onSuggestSelect={this.onSuggestSelect}/>
       </div>
     );
   }

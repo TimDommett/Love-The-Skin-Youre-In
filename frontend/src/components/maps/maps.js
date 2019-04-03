@@ -32,7 +32,9 @@ class Maps extends React.Component {
 
 
     componentDidMount() {
-        this.props.burritoPlaces.forEach(this.addBurritoPlace);
+        if (this.props.burritoPlaces != undefined) {
+          this.props.burritoPlaces.forEach(this.addBurritoPlace);
+        }
     }
 
     addBurritoPlace(burritoPlace) {
@@ -120,13 +122,18 @@ class Maps extends React.Component {
             // burritoPlaces={this.state.shops}
           >
                 {this.props.burritoPlaces.map((shop, index) => {
-                    return (
-                        <Marker
-                            position={shop.location}
+                    if (shop.lat != undefined ) {
+                        return (
+                            <Marker
+                                // position={shop.location}
+                                // center: {lat: this.state.lat, lng: this.state.lng }
+                                position={{ lat: shop.lat, lng: shop.lng }}
                             // title="Click to zoom"
                             // onClick={props.onMarkerClick}
-                        />
-                    )
+                            />
+                        )
+                    }
+                    
                 })}
             <Marker position={newDefault} />
             {/* {this.state.accomodations.map(accomodation => (

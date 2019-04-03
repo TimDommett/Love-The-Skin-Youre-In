@@ -20,6 +20,11 @@ class MainPage extends React.Component {
     this.state = {
   location: { lat: -33.9248685, lng: 18.424055299999964 },
   defaultCenter: { lat: -34.397, lng: 150.644 },
+      // this.state = {
+        accomodations: []
+        // search: "", 
+        // selectedOption: "title"
+      
     };
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
 
@@ -113,7 +118,7 @@ class MainPage extends React.Component {
                   location={this.state.location}
                   onSuggestSelect={this.onSuggestSelect}
                   // burritos={this.state.accomodations}
-                  burritoPlaces={burritos}
+                  burritoPlaces={this.state.accomodations}
                 />
               </div>
             </div>
