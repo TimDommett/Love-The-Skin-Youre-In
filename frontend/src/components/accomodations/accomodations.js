@@ -45,6 +45,7 @@ class Accomodation extends React.Component {
             <AccomodationBox
               key={accomodation._id}
               title={accomodation.title}
+              acc={accomodation._id}
               text={accomodation.text}
               link={accomodation.link}
               price={accomodation.price}

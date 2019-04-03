@@ -27,13 +27,13 @@ import StarRatingComponent from "react-star-rating-component";
 class ReviewCompose extends React.Component {
     constructor(props) {
         super(props);
-
+        const acc = this.props.accomodation;
         this.state = {
             comment: "",
             // text: "",
             // link: "",
             rating: 1,
-            accomodation: "",
+            accomodation: acc,
             // photoURL: "",
             // set the default here in photoURL
             newReview: ""
@@ -67,12 +67,13 @@ class ReviewCompose extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // this.setState({accomodation: this.props.accomodation});
         let review = {
             // title: this.state.title,
             comment: this.state.comment,
             // link: this.state.link,
             rating: this.state.rating,
-            // accomodation: this.state.accomodation,
+            accomodation: this.state.accomodation,
             // photoURL: this.state.photoURL,
             // lat: this.state.location.lat,
             // lng: this.state.location.lng,
@@ -112,6 +113,7 @@ class ReviewCompose extends React.Component {
 
     render() {
         const { comment, rating } = this.state;
+        // const {accomodation: this.props.accomodation} = this.state;
         // this.state.accomodation = this.props.accomodation;
         // const preview = this.state.photoURL ? <img className="image-preview new-post-form-child" width="100px" alt="" src={this.state.photoURL} /> : null;
 
@@ -158,6 +160,7 @@ class ReviewCompose extends React.Component {
 
                                 onStarClick={this.onStarClick.bind(this)}
                             />
+                            {/* {this.state.accomodation = this.props.accomodation} */}
                         </div>
                         {/* <select value={price} onChange={this.update("price")}>
               <option value="1">1</option>

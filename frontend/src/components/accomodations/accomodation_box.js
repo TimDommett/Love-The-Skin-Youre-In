@@ -48,10 +48,11 @@ class AccomodationBox extends React.Component {
               price={this.props.price}
               photoURL={this.props.photoURL}
               lat={this.props.lat}
-
-
             />
-            <ReviewCompose accomodation={this.props._id} />
+            <ReviewCompose
+              key={this.props.acc}
+              accomodation={this.props.acc}
+            />
             <Reviews accomodation={this.props._id} />
           </div>
         );
