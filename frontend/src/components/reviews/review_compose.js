@@ -33,6 +33,7 @@ class ReviewCompose extends React.Component {
             // text: "",
             // link: "",
             rating: 1,
+            accomodation: "",
             // photoURL: "",
             // set the default here in photoURL
             newReview: ""
@@ -71,6 +72,7 @@ class ReviewCompose extends React.Component {
             comment: this.state.comment,
             // link: this.state.link,
             rating: this.state.rating,
+            // accomodation: this.state.accomodation,
             // photoURL: this.state.photoURL,
             // lat: this.state.location.lat,
             // lng: this.state.location.lng,
@@ -110,6 +112,7 @@ class ReviewCompose extends React.Component {
 
     render() {
         const { comment, rating } = this.state;
+        // this.state.accomodation = this.props.accomodation;
         // const preview = this.state.photoURL ? <img className="image-preview new-post-form-child" width="100px" alt="" src={this.state.photoURL} /> : null;
 
 

@@ -52,7 +52,7 @@ router.post('/',
             // link: req.body.link,
             rating: req.body.rating,
             // photoURL: req.body.photoURL,
-            // accomodation: req.accomodation.id
+            accomodation: req.body.accomodation
         });
 
         newReview.save().then(review => res.json(review));
