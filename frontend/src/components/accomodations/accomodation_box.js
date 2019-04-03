@@ -53,7 +53,10 @@ class AccomodationBox extends React.Component {
               key={this.props.acc}
               accomodation={this.props.acc}
             />
-            <Reviews accomodation={this.props._id} />
+            <Reviews
+              key={this.props.acc}
+              accomodation={this.props.acc}
+            />
           </div>
         );
       };
