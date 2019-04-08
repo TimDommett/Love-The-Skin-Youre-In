@@ -2,6 +2,11 @@
   "name": "ahafh",
   "version": "1.0.0",
   "description": "An AirBNB clone",
+  "engines": {
+    "node": "10.3.0",
+    "npm": "6.8.0"
+
+  },
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
