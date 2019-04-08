@@ -2,3 +2,5 @@
 /node_modules
 /frontend/node_modules
 /frontend/src/keys.js
+/config/keys_dev
+/config/keys_prod
