@@ -128,6 +128,7 @@ class Maps extends React.Component {
                                 // position={shop.location}
                                 // center: {lat: this.state.lat, lng: this.state.lng }
                                 position={{ lat: shop.lat, lng: shop.lng }}
+                                title={shop.title}
                             // title="Click to zoom"
                             // onClick={props.onMarkerClick}
                             />
@@ -135,7 +136,7 @@ class Maps extends React.Component {
                     }
                     
                 })}
-            <Marker position={newDefault} />
+            <Marker position={newDefault} title={"You are here..."}/>
             {/* {this.state.accomodations.map(accomodation => (
                     location = accomodation.lat, accomodation.lng 
                     < Marker
