@@ -5,7 +5,6 @@
   "engines": {
     "node": "10.3.0",
     "npm": "6.8.0"
-
   },
   "main": "app.js",
   "scripts": {
@@ -15,7 +14,7 @@
     "frontend-install": "npm install --prefix frontend/src/components",
     "frontend": "npm start --prefix frontend/src/components",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "ISC",
