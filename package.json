@@ -21,7 +21,6 @@
   "dependencies": {
     "aws-s3": "^2.0.5",
     "axios": "^0.18.0",
-    "babel-loader": "^8.0.5",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
