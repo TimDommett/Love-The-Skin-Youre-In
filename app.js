@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-const db = require("./config/keys").mongoURI;
+const db = require("./frontend/src/config/keys").mongoURI;
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
@@ -28,7 +28,7 @@ app.get("/", (req, res) => res.send("Hello World!!"));
 
 
 app.use(passport.initialize());
-require("./config/passport")(passport);
+require("./frontend/src/config/passport")(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
