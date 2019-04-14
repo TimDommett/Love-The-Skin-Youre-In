@@ -9,7 +9,7 @@ import MapForForms from '../maps/map_for_forms';
 
 
 
-const keys = require("../../keys");
+const keys = require("../../config/keys");
 
 const config = {
   bucketName: "ahomeawayfromhome",
