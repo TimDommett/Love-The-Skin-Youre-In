@@ -1,6 +1,6 @@
 # Love The Skin You're In
 
-LTSYI is a website for finding, reviewing and advertising tattoo studios. As tattoos become less tabboo and more accepted my modern society, 
+LTSYI is a website for finding, reviewing and advertising tattoo studios. As tattoos become less taboo and more accepted by modern society, more people are searching for quality studios for their life long commitment on their skin. 
 
 
 **Major Features:**
