@@ -50,6 +50,7 @@ class MainPage extends React.Component {
     //   .then(data => console.log(data.location))
     //   .catch(err => alert(err))
   }
+  
   navigateToPosts() {
     this.props.history.push("/accomodations");
   }
