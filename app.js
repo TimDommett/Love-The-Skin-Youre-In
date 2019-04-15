@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const db = require("./frontend/src/config/keys").mongoURI;
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect("mongodb+srv://Tim:00885522@cluster0-0ctlu.mongodb.net/test?retryWrites=true", { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
