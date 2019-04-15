@@ -6,11 +6,6 @@ import { Link } from "react-router-dom";
 
 
 const google = window.google;
-const burritos = [
-  { location: {lat: -33.9375585, lng: 18.472116899999946}, name: "Papalote" },
-  { location: {lat: 37.772045, lng: -122.437015}, name: "The Little Chihuahua" },
-  { location: {lat: -33.9657883, lng: 18.481019999999944}, name: "Cancun" }
-];
 
 
 class MainPage extends React.Component {
@@ -27,6 +22,8 @@ class MainPage extends React.Component {
       
     };
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
+    this.navigateToPosts = this.navigateToPosts.bind(this);
+
 
   };
 
@@ -52,6 +49,9 @@ class MainPage extends React.Component {
     // S3FileUpload.uploadFile(e.target.files[0], config)
     //   .then(data => console.log(data.location))
     //   .catch(err => alert(err))
+  }
+  navigateToPosts() {
+    this.props.history.push("/accomodations");
   }
 
   updateMarkers(accomodations) {
@@ -117,6 +117,7 @@ class MainPage extends React.Component {
                 <Maps
                   location={this.state.location}
                   onSuggestSelect={this.onSuggestSelect}
+                  navigateToPosts={this.navigateToPosts}
                   // burritos={this.state.accomodations}
                   burritoPlaces={this.state.accomodations}
                 />

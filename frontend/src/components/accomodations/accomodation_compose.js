@@ -48,7 +48,6 @@ class AccomodationCompose extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.upload = this.upload.bind(this);
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
-
   }
 
   componentWillReceiveProps(nextProps) {
@@ -56,7 +55,6 @@ class AccomodationCompose extends React.Component {
   }
 
   upload(e) {
-
     // const fileReader = new FileReader();
     // e.preventDefault;
     console.log(e.target.files[0]);
@@ -68,23 +66,28 @@ class AccomodationCompose extends React.Component {
       )
       // .then(data => console.log(data.location))
       .catch(err => console.error(err));
-  };
+  }
 
-  onSuggestSelect = function (suggest) {
+
+
+  onSuggestSelect = function(suggest) {
     // suggest ? {
-    this.setState({
-      location: suggest.location,
-      lat: suggest.location.lat,
-      lng: suggest.location.lng,
-      defaultCenter: {
+    this.setState(
+      {
+        location: suggest.location,
         lat: suggest.location.lat,
-        lng: suggest.location.lng
-      }
-    }, () => console.log(this.state.location.lat))
+        lng: suggest.location.lng,
+        defaultCenter: {
+          lat: suggest.location.lat,
+          lng: suggest.location.lng
+        }
+      },
+      () => console.log(this.state.location.lat)
+    );
     // S3FileUpload.uploadFile(e.target.files[0], config)
     //   .then(data => console.log(data.location))
     //   .catch(err => alert(err))
-  }
+  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -109,7 +112,6 @@ class AccomodationCompose extends React.Component {
     });
   }
 
-
   onStarClick(nextValue, prevValue, name) {
     this.setState({ price: nextValue });
   }
@@ -125,15 +127,21 @@ class AccomodationCompose extends React.Component {
     if (event.which === 13 /* Enter */) {
       event.preventDefault();
       event.stopPropagation();
-      
+
       // this.value = this.value + "\n";
     }
   }
 
   render() {
     const { title, text, link, price, location } = this.state;
-    const preview = this.state.photoURL ? <img className="image-preview new-post-form-child" width="100px" alt="" src={this.state.photoURL} /> : null;
-
+    const preview = this.state.photoURL ? (
+      <img
+        className="image-preview new-post-form-child"
+        width="100px"
+        alt=""
+        src={this.state.photoURL}
+      />
+    ) : null;
 
     return (
       <div>
@@ -193,7 +201,10 @@ class AccomodationCompose extends React.Component {
         </form>
         <br />
         {/* <AccomodationBox text={this.state.newAccomodation} /> */}
-        <MapForForms location={this.state.location} onSuggestSelect={this.onSuggestSelect}/>
+        <MapForForms
+          location={this.state.location}
+          onSuggestSelect={this.onSuggestSelect}
+        />
       </div>
     );
   }
