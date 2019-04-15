@@ -1,7 +1,5 @@
-module.exports = {
-  mongoURI: process.env.mongoURI,
-  secretOrKey: process.env.secretOrKey,
-  awsAccessKeyID: process.env.awsAccessKeyID,
-  awsSecretAccessKey: process.env.awsSecretAccessKey,
-  googleMapsKey: process.env.googleMapsKey
-};
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./keys_prod");
+} else {
+  module.exports = require("./keys_dev");
+}
