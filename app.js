@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const db = require("./frontend/src/config/keys").mongoURI;
 mongoose
-    .connect("mongodb+srv://Tim:00885522@cluster0-0ctlu.mongodb.net/test?retryWrites=true", { useNewUrlParser: true })
+    .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
@@ -37,5 +37,5 @@ app.use("/api/users", users);
 app.use("/api/accomodations", accomodations);
 app.use("/api/reviews", reviews);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 7066;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
