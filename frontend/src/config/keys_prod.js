@@ -1,5 +1,5 @@
 module.exports = {
-  mongoURI: process.env.MONGOLAB_URI,
+  mongoURI: process.env.MONGO_URL,
   secretOrKey: process.env.secretOrKey,
   awsAccessKeyID: process.env.awsAccessKeyID,
   awsSecretAccessKey: process.env.awsSecretAccessKey,
