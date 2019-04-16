@@ -149,7 +149,7 @@ class Maps extends React.Component {
         // const lon = loc ? loc.longitude : 118.25;
         const MapWithAMarker = withGoogleMap(props => (
           <GoogleMap
-            defaultZoom={12}
+            defaultZoom={10}
             defaultCenter={newDefault}
             // burritoPlaces={this.state.shops}
           >
