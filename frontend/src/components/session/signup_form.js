@@ -94,6 +94,7 @@ class SignupForm extends React.Component {
                 {this.renderErrors()}
               </div>
             </form>
+            <p>Don't worry, we wont send you any emails without your permission. Your information is safe with us!</p>
           </div>
         );
     }
