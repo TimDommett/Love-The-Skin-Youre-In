@@ -158,17 +158,6 @@
 
 .circle5 {
   position: absolute;
-/*
-  left: 50%;
-  top: 50%;
-  margin: -100px;
-  width: 200px;
-  height: 200px;
-  background: #c7cbd0;
-  border-radius: 50%;
-  box-shadow: inset -25px 0px 0 0px #9098a1;
-  -webkit-backface-visibility: hidden;
-*/
   top: 20%;
   left: 2%;
    transition: transform 0.2s ease-in-out;
@@ -180,17 +169,7 @@
 
 .circle6 {
   position: absolute;
-/*
-  left: 50%;
-  top: 50%;
-  margin: -100px;
-  width: 200px;
-  height: 200px;
-  background: #c7cbd0;
-  border-radius: 50%;
-  box-shadow: inset -25px 0px 0 0px #9098a1;
-  -webkit-backface-visibility: hidden;
-*/
+
   top: 20%;
   left: 2%;
    transition: transform 0.2s ease-in-out;

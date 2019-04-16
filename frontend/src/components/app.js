@@ -9,7 +9,6 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ProfileContainer from './profile/profile_container';
 import AccomodationComposeContainer from './accomodations/accomodation_compose_container';
-// import ReviewsContainer from './reviews/reviews_container';
 
 const App = () => (
     <div>
@@ -20,7 +19,6 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
             <ProtectedRoute exact path="/accomodations" component={AccomodationsContainer} /> 
-            {/* <ProtectedRoute exact path="/reviews" component={ReviewsContainer} />  */}
             <ProtectedRoute exact path="/profile" component={ProfileContainer} />
             <ProtectedRoute exact path="/new_accomodation" component={AccomodationComposeContainer} />
         </Switch>

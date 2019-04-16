@@ -9,8 +9,7 @@ class Accomodation extends React.Component {
 
     this.state = {
         accomodations: []
-      // search: "", 
-      // selectedOption: "title"
+   
     };
   }
 
@@ -25,16 +24,6 @@ class Accomodation extends React.Component {
   // order by rating
 
   render() {
-    // const { search, selectedOption } = this.state;
-    // const filteredPosts = posts.filter(post => {
-    //   if (selectedOption == "title") {
-    //     return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
-    //   }
-    //   if (selectedOption == "description") {
-    //     return post.description.toLowerCase().indexOf(search.toLowerCase()) !== -1
-    //   }
-    // })
-    // const sortedPosts = filteredPosts.sort((a, b) => b.votes - a.votes);
       if (this.state.accomodations.length === 0) {
         return <div></div>;
     } else {

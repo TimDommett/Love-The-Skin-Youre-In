@@ -15,10 +15,8 @@ class MainPage extends React.Component {
     this.state = {
   location: { lat: -33.9248685, lng: 18.424055299999964 },
   defaultCenter: { lat: -34.397, lng: 150.644 },
-      // this.state = {
         accomodations: []
-        // search: "", 
-        // selectedOption: "title"
+
       
     };
     this.onSuggestSelect = this.onSuggestSelect.bind(this);
@@ -46,9 +44,7 @@ class MainPage extends React.Component {
         lng: suggest.location.lng
       }
     }, () => console.log(this.state.location.lat))
-    // S3FileUpload.uploadFile(e.target.files[0], config)
-    //   .then(data => console.log(data.location))
-    //   .catch(err => alert(err))
+  
   }
   
   navigateToPosts() {

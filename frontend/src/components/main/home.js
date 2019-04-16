@@ -1,7 +1,4 @@
-// var bg = document.querySelector("bg");
-// var footer = document.querySelector("footer");
 
-// const inputs = [].slice.call(document.querySelectorAll('.bg'));
 
 var lFollowX = 0,
     lFollowY = 0,

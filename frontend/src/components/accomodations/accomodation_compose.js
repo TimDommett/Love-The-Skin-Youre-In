@@ -55,8 +55,6 @@ class AccomodationCompose extends React.Component {
   }
 
   upload(e) {
-    // const fileReader = new FileReader();
-    // e.preventDefault;
     console.log(e.target.files[0]);
     S3Client.uploadFile(e.target.files[0])
       .then(data =>
@@ -64,7 +62,6 @@ class AccomodationCompose extends React.Component {
           photoURL: data.location
         })
       )
-      // .then(data => console.log(data.location))
       .catch(err => console.error(err));
   }
 
@@ -84,9 +81,7 @@ class AccomodationCompose extends React.Component {
       },
       () => console.log(this.state.location.lat)
     );
-    // S3FileUpload.uploadFile(e.target.files[0], config)
-    //   .then(data => console.log(data.location))
-    //   .catch(err => alert(err))
+
   };
 
   handleSubmit(e) {
@@ -175,12 +170,9 @@ class AccomodationCompose extends React.Component {
             {preview}
             <input
               type="file"
-              // value={price}
               onChange={this.upload}
-              // placeholder="Write your accomodation..."
             />
             <div>
-              {/* <h2>Rating from state: {price}</h2> */}
               <StarRatingComponent
                 name="rate1"
                 starCount={5}
@@ -189,18 +181,10 @@ class AccomodationCompose extends React.Component {
                 onStarClick={this.onStarClick.bind(this)}
               />
             </div>
-            {/* <select value={price} onChange={this.update("price")}>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select> */}
             <input type="submit" value="Submit" />
           </div>
         </form>
         <br />
-        {/* <AccomodationBox text={this.state.newAccomodation} /> */}
         <MapForForms
           location={this.state.location}
           onSuggestSelect={this.onSuggestSelect}

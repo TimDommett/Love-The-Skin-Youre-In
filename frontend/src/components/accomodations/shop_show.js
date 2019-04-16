@@ -5,25 +5,7 @@ import StarRatingComponent from "react-star-rating-component";
 
 
 class ShopShow extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { description: false };
-    //     this.toggleDetail = this.toggleDetail.bind(this);
-        // this.handleDelete = this.handleDelete.bind(this)
-        // this.deletePost = this.deletePost.bind(this)
-        // this.toggleTodo = this.toggleTodo.bind(this);
-
-
-
-    // }
-
-    // toggleDetail(e) {
-    //     e.preventDefault();
-    //     this.setState({
-    //         description: !this.state.description,
-            // post_id: this.state.id
-        // });
-    // }
+    
     render() {
         return (
             <div className=" fade-in" >
@@ -46,8 +28,7 @@ class ShopShow extends React.Component {
                 <ul>{this.props.text}</ul>
             <ul className="shop-link">{this.props.link}</ul>
                 <ul>{this.props.lat}</ul>
-                {/* {description} */}
-                {/* add a map showing where it is and some proper styling */}
+       
             </div>
         );
     }
