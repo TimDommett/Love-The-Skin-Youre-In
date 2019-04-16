@@ -27,7 +27,6 @@ class ShopShow extends React.Component {
 
                 <ul>{this.props.text}</ul>
             <ul className="shop-link">{this.props.link}</ul>
-                <ul>{this.props.lat}</ul>
        
             </div>
         );
