@@ -19,6 +19,8 @@ if (process.env.NODE_ENV === 'production') {
 
 
 const db = require("./frontend/src/config/keys").mongoURI;
+console.log(process.env);
+console.log(process.env).PORT;
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
