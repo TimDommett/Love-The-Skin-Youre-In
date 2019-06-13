@@ -2,7 +2,7 @@
 
 LTSYI is a website for finding, reviewing and advertising tattoo studios. As tattoos become less taboo and more accepted by modern society, more people are searching for quality studios for their life long commitment on their skin. 
 
-
+ 
 **Major Features:**
 
 1. Google Maps
